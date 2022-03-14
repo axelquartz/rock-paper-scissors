@@ -1,4 +1,4 @@
-let inputUser = prompt('Rock, paper or Scissors?');
+/*let inputUser = prompt('Rock, paper or Scissors?');
 inputUser = inputUser.toLocaleLowerCase()
 
 function randomItem(value){
@@ -27,4 +27,9 @@ if (inputUser == 'rock' && randomItem(items) == 'rock'){
     console.log('you SCISSORS and cpu SCISSORS. TIE')
 }else{
     console.log('Bad Command, refresh the page')
-}
+}*/
+
+let btnRock = document.querySelector('button#btnRock');
+btnRock.addEventListener('click', function(){
+    btnRock.innerText='Clicked'
+})
