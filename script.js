@@ -29,7 +29,36 @@ if (inputUser == 'rock' && randomItem(items) == 'rock'){
     console.log('Bad Command, refresh the page')
 }*/
 
-let btnRock = document.querySelector('button#btnRock');
-btnRock.addEventListener('click', function(){
-    btnRock.innerText='Clicked'
+
+
+
+let btnRock = document.querySelector('button#btnRock')
+let rockClicked = btnRock.addEventListener('click', function(){
+    test('rock')
 })
+
+let btnPaper = document.querySelector('button#btnPaper')
+let paperClicked = btnPaper.addEventListener('click', function(){
+    test('paper')
+})
+
+let btnScissors = document.querySelector('button#btnScissors')
+btnScissors.addEventListener('click', function(){
+    test('scissors')
+})
+
+let resultDisplay = document.querySelector('#resultDisplay');
+resultDisplay.style.fontSize='50px'
+resultDisplay.style.fontWeight='bold'
+let points;
+points = 0;
+
+function test(val){
+    if (val == 'rock') {
+        resultDisplay.innerText = val;
+    }else if(val == 'paper'){
+        alert(val);
+    }else if(val == 'scissors'){
+        alert(val)
+    }
+};
