@@ -1,17 +1,17 @@
 //Button event listeners
 let btnRock = document.querySelector('button#btnRock')
 let rockClicked = btnRock.addEventListener('click', function(){  //Click event to 'Rock' button
-    test('rock')
+    playGame('rock')
 })
 
 let btnPaper = document.querySelector('button#btnPaper')
 let paperClicked = btnPaper.addEventListener('click', function(){  //Click event to 'Paper' button
-    test('paper')
+    playGame('paper')
 })
 
 let btnScissors = document.querySelector('button#btnScissors')
 btnScissors.addEventListener('click', function(){  //Click event to 'Scissors' button
-    test('scissors')
+    playGame('scissors')
 })
 
 //Live result display functionality
@@ -33,9 +33,7 @@ Number(userPoints)
 
 Number(cpuPoints)
 
-
-
-function test(val){  //Game function. It will be renamed and optimized
+function playGame(val){  //Game function. It will be renamed and optimized
 
     //The logic of the Rock Paper and Scissors game is based in a If Else statement
 
@@ -47,21 +45,18 @@ function test(val){  //Game function. It will be renamed and optimized
 
     }else if(val == 'rock' && randomItem == 'paper'){
         resultDisplay.innerText = 'PIERDES' + 'User = Paper. ' 
-        + userPoints + ' Puntos. ' + 'CPU ' + cpuPoints + ' Puntos';
-        cpuPoints+=1;
+        + userPoints + ' Puntos. ' + 'CPU ' + (cpuPoints+=1) + ' Puntos';
         randomItem = items[Math.floor(Math.random()*items.length)];
 
     }else if(val == 'rock' && randomItem == 'scissors'){
         resultDisplay.innerText = 'GANAS' + 'User = Scissors. ' 
-        + userPoints + ' Puntos. ' + 'CPU ' + cpuPoints + ' Puntos';
-        userPoints+=1;
+        + (userPoints+=1) + ' Puntos. ' + 'CPU ' + cpuPoints + ' Puntos';
         randomItem = items[Math.floor(Math.random()*items.length)];
 
     //Logic of Paper
     }else if(val == 'paper' && randomItem == 'rock') {
         resultDisplay.innerText = 'GANAS ' + 'User = Rock. ' 
-        + userPoints + ' Puntos. ' + 'CPU ' + cpuPoints + ' Puntos';
-        userPoints+=1;
+        + (userPoints+=1) + ' Puntos. ' + 'CPU ' + cpuPoints + ' Puntos';
         randomItem = items[Math.floor(Math.random()*items.length)];
 
     }else if(val == 'paper' && randomItem == 'paper'){
@@ -71,21 +66,18 @@ function test(val){  //Game function. It will be renamed and optimized
 
     }else if(val == 'paper' && randomItem == 'scissors'){
         resultDisplay.innerText = 'PIERDES' + 'User = Scissors. ' 
-        + userPoints + ' Puntos. ' + 'CPU ' + cpuPoints + ' Puntos';
-        cpuPoints+=1;
+        + userPoints + ' Puntos. ' + 'CPU ' + (cpuPoints+=1) + ' Puntos';
         randomItem = items[Math.floor(Math.random()*items.length)];
 
     //Logic of Scissors
     }else if(val == 'scissors' && randomItem == 'rock') {
         resultDisplay.innerText = 'PIERDES' + 'User = Rock. ' 
-        + userPoints + ' Puntos. ' + 'CPU ' + cpuPoints + ' Puntos';
-        cpuPoints+=1;
+        + userPoints + ' Puntos. ' + 'CPU ' + (cpuPoints+=1) + ' Puntos';
         randomItem = items[Math.floor(Math.random()*items.length)];
 
     }else if(val == 'scissors' && randomItem == 'paper'){
         resultDisplay.innerText = 'GANAS' + 'User = Paper. ' 
-        + userPoints + ' Puntos. ' + 'CPU ' + cpuPoints + ' Puntos';
-        userPoints+=1;
+        + (userPoints+=1) + ' Puntos. ' + 'CPU ' + cpuPoints + ' Puntos';
         randomItem = items[Math.floor(Math.random()*items.length)];
 
     }else if(val == 'scissors' && randomItem == 'scissors'){
@@ -94,11 +86,10 @@ function test(val){  //Game function. It will be renamed and optimized
         randomItem = items[Math.floor(Math.random()*items.length)];
 }
 
-//This If Else statement will diplay a win or lose message to the first one (between User or CPU) who reaches 5 points. Is not working well
+//This If Else statement displays a win or lose message to the first one (between User or CPU) who reaches 5 points.
 if (userPoints == 5) {
     resultDisplay.innerText = 'YOU WIN!'
-
-    }else if(cpuPoints == 6){
+    }else if(cpuPoints == 5){
     resultDisplay.innerText = 'YOU LOSE'
     }
 
