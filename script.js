@@ -1,64 +1,105 @@
-/*let inputUser = prompt('Rock, paper or Scissors?');
-inputUser = inputUser.toLocaleLowerCase()
-
-function randomItem(value){
-    return items[Math.floor(Math.random()*items.length)];
-}
-
-let items = ['rock','paper','scissors'];
-
-if (inputUser == 'rock' && randomItem(items) == 'rock'){
-    console.log('you ROCK and cpu ROCK. TIE')
-}else if (inputUser == 'rock' && randomItem(items) == 'paper'){
-    console.log('you ROCK and cpu PAPER. YOU LOSE')
-}else if (inputUser == 'rock' && randomItem(items) == 'scissors'){
-    console.log('you ROCK and cpu SCISSORS. YOU WIN')
-}else if (inputUser == 'paper' && randomItem(items) == 'rock'){
-    console.log('you PAPPER and cpu ROCK. YOU WIN')
-}else if (inputUser == 'paper' && randomItem(items) == 'paper'){
-    console.log('you PAPER and cpu PAPER. TIE')
-}else if (inputUser == 'paper' && randomItem(items) == 'scissors'){
-    console.log('you PAPER and cpu SCISSORS. YOU LOSE')
-}else if (inputUser == 'scissors' && randomItem(items) == 'rock'){
-    console.log('you SCISSORS and cpu ROCK. YOU LOSE')
-}else if (inputUser == 'scissors' && randomItem(items) == 'paper'){
-    console.log('you SCISSORS and cpu PAPER. YOU WIN')
-}else if (inputUser == 'scissors' && randomItem(items) == 'scissors'){
-    console.log('you SCISSORS and cpu SCISSORS. TIE')
-}else{
-    console.log('Bad Command, refresh the page')
-}*/
-
-
-
-
+//Button event listeners
 let btnRock = document.querySelector('button#btnRock')
-let rockClicked = btnRock.addEventListener('click', function(){
+let rockClicked = btnRock.addEventListener('click', function(){  //Click event to 'Rock' button
     test('rock')
 })
 
 let btnPaper = document.querySelector('button#btnPaper')
-let paperClicked = btnPaper.addEventListener('click', function(){
+let paperClicked = btnPaper.addEventListener('click', function(){  //Click event to 'Paper' button
     test('paper')
 })
 
 let btnScissors = document.querySelector('button#btnScissors')
-btnScissors.addEventListener('click', function(){
+btnScissors.addEventListener('click', function(){  //Click event to 'Scissors' button
     test('scissors')
 })
 
+//Live result display functionality
 let resultDisplay = document.querySelector('#resultDisplay');
 resultDisplay.style.fontSize='50px'
 resultDisplay.style.fontWeight='bold'
-let points;
-points = 0;
 
-function test(val){
-    if (val == 'rock') {
-        resultDisplay.innerText = val;
-    }else if(val == 'paper'){
-        alert(val);
-    }else if(val == 'scissors'){
-        alert(val)
+let items = ['rock','paper','scissors'] //CPU posblie inputs
+
+let randomItem = items[Math.floor(Math.random()*items.length)];  //CPU random input between 'rock', 'paper' and 'scissors'
+
+//Initialize user points and CPU points to 0
+let userPoints = 0; 
+
+let cpuPoints = 0;
+
+//Transform points into numbers
+Number(userPoints)  
+
+Number(cpuPoints)
+
+
+
+function test(val){  //Game function. It will be renamed and optimized
+
+    //The logic of the Rock Paper and Scissors game is based in a If Else statement
+
+    //Logic of Rock
+    if (val == 'rock' && randomItem == 'rock') {
+        resultDisplay.innerText = 'EMPATES ' + 'User = Rock. ' 
+        + userPoints + ' Puntos. ' + 'CPU ' + cpuPoints + ' Puntos';
+        randomItem = items[Math.floor(Math.random()*items.length)];
+
+    }else if(val == 'rock' && randomItem == 'paper'){
+        resultDisplay.innerText = 'PIERDES' + 'User = Paper. ' 
+        + userPoints + ' Puntos. ' + 'CPU ' + cpuPoints + ' Puntos';
+        cpuPoints+=1;
+        randomItem = items[Math.floor(Math.random()*items.length)];
+
+    }else if(val == 'rock' && randomItem == 'scissors'){
+        resultDisplay.innerText = 'GANAS' + 'User = Scissors. ' 
+        + userPoints + ' Puntos. ' + 'CPU ' + cpuPoints + ' Puntos';
+        userPoints+=1;
+        randomItem = items[Math.floor(Math.random()*items.length)];
+
+    //Logic of Paper
+    }else if(val == 'paper' && randomItem == 'rock') {
+        resultDisplay.innerText = 'GANAS ' + 'User = Rock. ' 
+        + userPoints + ' Puntos. ' + 'CPU ' + cpuPoints + ' Puntos';
+        userPoints+=1;
+        randomItem = items[Math.floor(Math.random()*items.length)];
+
+    }else if(val == 'paper' && randomItem == 'paper'){
+        resultDisplay.innerText = 'EMPATES' + 'User = Paper. ' 
+        + userPoints + ' Puntos. ' + 'CPU ' + cpuPoints + ' Puntos';
+        randomItem = items[Math.floor(Math.random()*items.length)];
+
+    }else if(val == 'paper' && randomItem == 'scissors'){
+        resultDisplay.innerText = 'PIERDES' + 'User = Scissors. ' 
+        + userPoints + ' Puntos. ' + 'CPU ' + cpuPoints + ' Puntos';
+        cpuPoints+=1;
+        randomItem = items[Math.floor(Math.random()*items.length)];
+
+    //Logic of Scissors
+    }else if(val == 'scissors' && randomItem == 'rock') {
+        resultDisplay.innerText = 'PIERDES' + 'User = Rock. ' 
+        + userPoints + ' Puntos. ' + 'CPU ' + cpuPoints + ' Puntos';
+        cpuPoints+=1;
+        randomItem = items[Math.floor(Math.random()*items.length)];
+
+    }else if(val == 'scissors' && randomItem == 'paper'){
+        resultDisplay.innerText = 'GANAS' + 'User = Paper. ' 
+        + userPoints + ' Puntos. ' + 'CPU ' + cpuPoints + ' Puntos';
+        userPoints+=1;
+        randomItem = items[Math.floor(Math.random()*items.length)];
+
+    }else if(val == 'scissors' && randomItem == 'scissors'){
+        resultDisplay.innerText = 'EMPATES' + 'User = Scissors. ' 
+        + userPoints + ' Puntos. ' + 'CPU ' + cpuPoints + ' Puntos';
+        randomItem = items[Math.floor(Math.random()*items.length)];
+}
+
+//This If Else statement will diplay a win or lose message to the first one (between User or CPU) who reaches 5 points. Is not working well
+if (userPoints == 5) {
+    resultDisplay.innerText = 'YOU WIN!'
+
+    }else if(cpuPoints == 6){
+    resultDisplay.innerText = 'YOU LOSE'
     }
+
 };
