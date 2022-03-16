@@ -44,23 +44,23 @@ function playGame(val){  //Game function. It will be renamed and optimized
     //The logic of the Rock Paper and Scissors game is based in a If Else statement
 
     //Logic of Rock
-    if (val == 'rock' && randomItem == 'rock') {
+    if (val == 'rock' && randomItem == 'rock') {  //If user selected 'paper' and CPU also selected 'paper'
 
-        resultDisplay.innerHTML='<h1>Tie</h1>'
+        resultDisplay.innerHTML='<h1>Tie</h1>'  //Displays the result in the H1 tag
 
-        userSelection.innerHTML='<img src="images/rock.jpeg" alt=""><h3>You = ' + userPoints + ' Points</h3>'
+        userSelection.innerHTML='<img src="images/rock.jpg" alt=""><h3>You = ' + userPoints + ' Points</h3>'  //Information of the user's current result
 
-        cpuSelection.innerHTML='<img src="images/rock.jpeg" alt=""><h3>CPU = ' + cpuPoints + ' Points</h3>'
+        cpuSelection.innerHTML='<img src="images/rock.jpg" alt=""><h3>CPU = ' + cpuPoints + ' Points</h3>'  //Information of CPY current result
 
-        randomItem = items[Math.floor(Math.random()*items.length)];
+        randomItem = items[Math.floor(Math.random()*items.length)];  //Changes CPU input randomly
 
     }else if(val == 'rock' && randomItem == 'paper'){
 
         resultDisplay.innerHTML='<h1>You Lose</h1>'
 
-        userSelection.innerHTML='<img src="images/rock.jpeg" alt=""><h3>You = ' + userPoints + ' Points</h3>'
+        userSelection.innerHTML='<img src="images/rock.jpg" alt=""><h3>You = ' + userPoints + ' Points</h3>'
 
-        cpuSelection.innerHTML='<img src="images/paper.jpeg" alt=""><h3>CPU = ' + (cpuPoints+=1) + ' Points</h3>'
+        cpuSelection.innerHTML='<img src="images/paper.jpg" alt=""><h3>CPU = ' + (cpuPoints+=1) + ' Points</h3>'
 
         // resultDisplay.innerText = 'PIERDES' + 'User = Paper. ' 
         // + userPoints + ' Puntos. ' + 'CPU ' + (cpuPoints+=1) + ' Puntos';
@@ -70,9 +70,9 @@ function playGame(val){  //Game function. It will be renamed and optimized
 
         resultDisplay.innerHTML='<h1>You Win</h1>'
 
-        userSelection.innerHTML='<img src="images/rock.jpeg" alt=""><h3>You = ' + (userPoints+=1) + ' Points</h3>'
+        userSelection.innerHTML='<img src="images/rock.jpg" alt=""><h3>You = ' + (userPoints+=1) + ' Points</h3>'
 
-        cpuSelection.innerHTML='<img src="images/scissors.jpeg" alt=""><h3>CPU = ' + cpuPoints + ' Points</h3>'
+        cpuSelection.innerHTML='<img src="images/scissors.jpg" alt=""><h3>CPU = ' + cpuPoints + ' Points</h3>'
 
         // resultDisplay.innerText = 'GANAS' + 'User = Scissors. ' 
         // + (userPoints+=1) + ' Puntos. ' + 'CPU ' + cpuPoints + ' Puntos';
@@ -83,9 +83,9 @@ function playGame(val){  //Game function. It will be renamed and optimized
 
         resultDisplay.innerHTML='<h1>You Win</h1>'
 
-        userSelection.innerHTML='<img src="images/paper.jpeg" alt=""><h3>You = ' + (userPoints+=1) + ' Points</h3>'
+        userSelection.innerHTML='<img src="images/paper.jpg" alt=""><h3>You = ' + (userPoints+=1) + ' Points</h3>'
 
-        cpuSelection.innerHTML='<img src="images/rock.jpeg" alt=""><h3>CPU = ' + cpuPoints + ' Points</h3>'
+        cpuSelection.innerHTML='<img src="images/rock.jpg" alt=""><h3>CPU = ' + cpuPoints + ' Points</h3>'
 
         // resultDisplay.innerText = 'GANAS ' + 'User = Rock. ' + (userPoints+=1) + ' Puntos. ' + 'CPU ' + cpuPoints + ' Puntos';
         randomItem = items[Math.floor(Math.random()*items.length)];
@@ -94,9 +94,9 @@ function playGame(val){  //Game function. It will be renamed and optimized
 
         resultDisplay.innerHTML='<h1>Tie</h1>'
 
-        userSelection.innerHTML='<img src="images/paper.jpeg" alt=""><h3>You = ' + userPoints + ' Points</h3>'
+        userSelection.innerHTML='<img src="images/paper.jpg" alt=""><h3>You = ' + userPoints + ' Points</h3>'
 
-        cpuSelection.innerHTML='<img src="images/paper.jpeg" alt=""><h3>CPU = ' + cpuPoints + ' Points</h3>'
+        cpuSelection.innerHTML='<img src="images/paper.jpg" alt=""><h3>CPU = ' + cpuPoints + ' Points</h3>'
 
         // resultDisplay.innerText = 'EMPATES' + 'User = Paper. ' 
         // + userPoints + ' Puntos. ' + 'CPU ' + cpuPoints + ' Puntos';
@@ -106,9 +106,9 @@ function playGame(val){  //Game function. It will be renamed and optimized
 
         resultDisplay.innerHTML='<h1>You Lose</h1>'
 
-        userSelection.innerHTML='<img src="images/paper.jpeg" alt=""><h3>You = ' + userPoints + ' Points</h3>'
+        userSelection.innerHTML='<img src="images/paper.jpg" alt=""><h3>You = ' + userPoints + ' Points</h3>'
 
-        cpuSelection.innerHTML='<img src="images/scissors.jpeg" alt=""><h3>CPU = ' + (cpuPoints+=1) + ' Points</h3>'
+        cpuSelection.innerHTML='<img src="images/scissors.jpg" alt=""><h3>CPU = ' + (cpuPoints+=1) + ' Points</h3>'
 
         // resultDisplay.innerText = 'PIERDES' + 'User = Scissors. ' 
         // + userPoints + ' Puntos. ' + 'CPU ' + (cpuPoints+=1) + ' Puntos';
@@ -119,9 +119,9 @@ function playGame(val){  //Game function. It will be renamed and optimized
 
         resultDisplay.innerHTML='<h1>You Lose</h1>'
 
-        userSelection.innerHTML='<img src="images/scissors.jpeg" alt=""><h3>You = ' + userPoints + ' Points</h3>'
+        userSelection.innerHTML='<img src="images/scissors.jpg" alt=""><h3>You = ' + userPoints + ' Points</h3>'
 
-        cpuSelection.innerHTML='<img src="images/rock.jpeg" alt=""><h3>CPU = ' + (cpuPoints+=1) + ' Points</h3>'
+        cpuSelection.innerHTML='<img src="images/rock.jpg" alt=""><h3>CPU = ' + (cpuPoints+=1) + ' Points</h3>'
 
         // resultDisplay.innerText = 'PIERDES' + 'User = Rock. ' 
         // + userPoints + ' Puntos. ' + 'CPU ' + (cpuPoints+=1) + ' Puntos';
@@ -131,9 +131,9 @@ function playGame(val){  //Game function. It will be renamed and optimized
 
         resultDisplay.innerHTML='<h1>You Win</h1>'
 
-        userSelection.innerHTML='<img src="images/scissors.jpeg" alt=""><h3>You = ' + (userPoints+=1) + ' Points</h3>'
+        userSelection.innerHTML='<img src="images/scissors.jpg" alt=""><h3>You = ' + (userPoints+=1) + ' Points</h3>'
 
-        cpuSelection.innerHTML='<img src="images/paper.jpeg" alt=""><h3>CPU = ' + cpuPoints + ' Points</h3>'
+        cpuSelection.innerHTML='<img src="images/paper.jpg" alt=""><h3>CPU = ' + cpuPoints + ' Points</h3>'
 
         // resultDisplay.innerText = 'GANAS' + 'User = Paper. ' 
         // + (userPoints+=1) + ' Puntos. ' + 'CPU ' + cpuPoints + ' Puntos';
@@ -143,9 +143,9 @@ function playGame(val){  //Game function. It will be renamed and optimized
 
         resultDisplay.innerHTML='<h1>Tie</h1>'
 
-        userSelection.innerHTML='<img src="images/scissors.jpeg" alt=""><h3>You = ' + userPoints + ' Points</h3>'
+        userSelection.innerHTML='<img src="images/scissors.jpg" alt=""><h3>You = ' + userPoints + ' Points</h3>'
 
-        cpuSelection.innerHTML='<img src="images/scissors.jpeg" alt=""><h3>CPU = ' + cpuPoints + ' Points</h3>'
+        cpuSelection.innerHTML='<img src="images/scissors.jpg" alt=""><h3>CPU = ' + cpuPoints + ' Points</h3>'
 
         // resultDisplay.innerText = 'EMPATES' + 'User = Scissors. ' 
         // + userPoints + ' Puntos. ' + 'CPU ' + cpuPoints + ' Puntos';
